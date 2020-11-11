@@ -50,10 +50,43 @@
     </li>
 
     <li class="">
+        <a href="{{ route('pendientes.index') }}">
+            <i class="menu-icon fa fa-wrench"></i>
+            <span class="menu-text">
+                Pendientes
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
+    <li class="">
         <a href="{{ route('dispositivos.index') }}">
             <i class="menu-icon fa fa-desktop"></i>
             <span class="menu-text">
                 Dispositivos
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
+    <li class="">
+        <a href="{{ route('pagos.index') }}">
+            <i class="menu-icon fa fa-money"></i>
+            <span class="menu-text">
+                Pagos
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
+    <li class="">
+        <a href="{{ route('empleados.index') }}">
+            <i class="menu-icon fa fa-users"></i>
+            <span class="menu-text">
+                Empleados
             </span>
 
             <b class="arrow"></b>

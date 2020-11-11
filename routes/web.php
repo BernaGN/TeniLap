@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DispositivoController;
+use App\Http\Controllers\PendienteController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\EmpleadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +24,6 @@ Route::resource('/', AdminController::class);
 
 Route::resource('/clientes', ClienteController::class);
 Route::resource('/dispositivos', DispositivoController::class);
+Route::resource('/pendientes', PendienteController::class);
+Route::resource('/pagos', PagoController::class);
+Route::resource('/empleados', EmpleadoController::class);
