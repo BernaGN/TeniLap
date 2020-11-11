@@ -25,7 +25,7 @@
             </div>
 
             <div class="main-content">
-                <p>Index</p>
+                <p>Dispositivo</p>
             </div><!-- /.main-content -->
 
             @include('admin.layouts.pie')

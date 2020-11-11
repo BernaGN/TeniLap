@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\DispositivoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,6 @@ use App\Http\Controllers\AdminController;
 
 Route::resource('/inicio', AdminController::class);
 Route::resource('/', AdminController::class);
+
+Route::resource('/clientes', ClienteController::class);
+Route::resource('/dispositivos', DispositivoController::class);

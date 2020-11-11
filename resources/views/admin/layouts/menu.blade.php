@@ -17,8 +17,8 @@
         <div class="navbar-header pull-left">
             <a href="{{ route('inicio.index') }}" class="navbar-brand">
                 <small>
-                    <i class="fa fa-leaf"></i>
-                    Ace Admin
+                    <i class="fa fa-cogs"></i>
+                    {{ config('app.name') }}
                 </small>
             </a>
         </div>
