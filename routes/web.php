@@ -7,6 +7,7 @@ use App\Http\Controllers\DispositivoController;
 use App\Http\Controllers\PendienteController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\CalendarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,4 @@ Route::resource('/dispositivos', DispositivoController::class);
 Route::resource('/pendientes', PendienteController::class);
 Route::resource('/pagos', PagoController::class);
 Route::resource('/empleados', EmpleadoController::class);
+Route::resource('/calendario', CalendarioController::class);

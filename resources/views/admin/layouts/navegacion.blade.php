@@ -93,4 +93,15 @@
         </a>
     </li>
 
+    <li class="">
+        <a href="{{ route('calendario.index') }}">
+            <i class="menu-icon fa fa-calendar"></i>
+            <span class="menu-text">
+                Calendario
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
 </ul><!-- /.nav-list -->
