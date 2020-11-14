@@ -15,7 +15,7 @@
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="{{ route('inicio.index') }}" class="navbar-brand">
+            <a href="{{ route('admin.index') }}" class="navbar-brand">
                 <small>
                     <i class="fa fa-cogs"></i>
                     {{ config('app.name') }}

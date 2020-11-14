@@ -1,7 +1,7 @@
 
 <ul class="nav nav-list">
     <li class="">
-        <a href="{{ route('inicio.index') }}">
+        <a href="{{ route('admin.index') }}">
             <i class="menu-icon fa fa-tachometer"></i>
             <span class="menu-text"> Dashboard </span>
         </a>

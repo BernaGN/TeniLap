@@ -20,8 +20,7 @@ use App\Http\Controllers\CalendarioController;
 |
 */
 
-Route::resource('/inicio', AdminController::class);
-Route::resource('/', AdminController::class);
+Route::resource('/admin', AdminController::class);
 
 Route::resource('/clientes', ClienteController::class);
 Route::resource('/dispositivos', DispositivoController::class);
