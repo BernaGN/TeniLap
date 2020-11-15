@@ -8,6 +8,7 @@ use App\Http\Controllers\PendienteController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CalendarioController;
+use App\Http\Controllers\InicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ use App\Http\Controllers\CalendarioController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('/inicio', InicioController::class);
+Route::resource('/', InicioController::class);
 
 Route::resource('/admin', AdminController::class);
 
