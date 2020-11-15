@@ -41,7 +41,12 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $empleado = new Empleado();
+        $empleado->nombre = $request->nombre;
+        $empleado->email = $request->email;
+        $empleado->password = $request->password;
+        $empleado->save();
+        return Redirect::to('empleados');
     }
 
     /**
@@ -52,7 +57,7 @@ class EmpleadoController extends Controller
      */
     public function show($id)
     {
-        return Empleado::findOrFail($id);
+        //
     }
 
     /**
@@ -63,7 +68,7 @@ class EmpleadoController extends Controller
      */
     public function edit($id)
     {
-        return Empleado::findOrFail($id);
+        //
     }
 
     /**
@@ -75,7 +80,12 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $empleado = Empleado::findOrFail($request->id_empleado);
+        $empleado->nombre = $request->nombre;
+        $empleado->email = $request->email;
+        $empleado->password = $request->password;
+        $empleado->save();
+        return Redirect::to('empleados');
     }
 
     /**
