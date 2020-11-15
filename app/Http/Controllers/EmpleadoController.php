@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Empleado;
+use DB;
 
 class EmpleadoController extends Controller
 {
@@ -13,7 +15,11 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        return view('admin.empleados');
+        return view('admin.empleados', [
+            'empleados' => DB::table('empleados')
+                ->orderBY('id', 'ASC')
+                ->get()
+        ]);
     }
 
     /**
