@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Empleado;
 use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class EmpleadoController extends Controller
 {
@@ -51,7 +52,7 @@ class EmpleadoController extends Controller
      */
     public function show($id)
     {
-        //
+        return Empleado::findOrFail($id);
     }
 
     /**
@@ -62,7 +63,7 @@ class EmpleadoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return Empleado::findOrFail($id);
     }
 
     /**
@@ -85,6 +86,9 @@ class EmpleadoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $empleado = Empleado::findOrFail($id);
+        $empleado->delete();
+        return Redirect::to('empleados')
+                        ->with('success','Eliminado correctamente');
     }
 }

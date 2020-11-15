@@ -54,30 +54,39 @@
                                             <td>{{$empleado->email}}</td>
                                             <td class="hidden-480">{{$empleado->password}}</td>
 
-                                            <td>
-                                                <div class="hidden-sm hidden-xs btn-group">
-                                                    <button class="btn btn-xs btn-success">
-                                                        <i class="ace-icon fa fa-check bigger-120"></i>
-                                                    </button>
+                                            <form action="{{route('empleados.destroy', $empleado->id)}}" method="post">
+                                                <td>
+                                                    <div class="hidden-sm hidden-xs btn-group">
+                                                        <a class="btn btn-xs btn-success" href="{{route('empleados.show', $empleado->id)}}">
+                                                            <i class="ace-icon fa fa-check bigger-120"></i>
+                                                        </a>
 
-                                                    <button class="btn btn-xs btn-info">
-                                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                    </button>
-
-                                                    <button class="btn btn-xs btn-danger">
-                                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                    </button>
-
-                                                    <button class="btn btn-xs btn-warning">
-                                                        <i class="ace-icon fa fa-flag bigger-120"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
+                                                        <a class="btn btn-xs btn-info"  href="{{route('empleados.edit', $empleado->id)}}">
+                                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                        </a>
+                                                        @method('DELETE')
+                                                        <button class="btn btn-xs btn-danger" type="submit" onclick="return confirm('Quieres eliminarlo?')">
+                                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                @csrf
+                                            </form>
                                         </tr>
                                         @endforeach
 
                                     </tbody>
                                 </table>
+                                @if ($message = Session::get('mensaje'))
+                                    <div class="alert alert-warning">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @endif
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @endif
                             </div><!-- /.span -->
                         </div><!-- /.row -->
                     </div><!-- /.page-content -->
@@ -90,6 +99,6 @@
                 <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
             </a>
         </div><!-- /.main-container -->
-    @include('admin.layouts.funcionesIndex')
+        @include('admin.layouts.funcionesIndex')
     </body>
 @endsection
