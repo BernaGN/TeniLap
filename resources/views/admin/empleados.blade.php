@@ -30,11 +30,11 @@
                         <h1>
                             Empleados
                         </h1>
-                        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#abrirmodal">
-                            <i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Agregar Categoría
-                        </button>
                     </div><!-- /.page-header -->
                     <div class="col-xs-12">
+                        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#abrirmodal">
+                            <i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Agregar Categoría
+                        </button><br><br>
                         <!-- PAGE CONTENT BEGINS -->
                         <div class="row">
                             <div class="col-xs-12">
@@ -59,15 +59,15 @@
 
                                             <td>
                                                 <div class="hidden-sm hidden-xs btn-group">
-                                                    <button class="btn btn-xs btn-success" type="button"  data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}"  data-toggle="modal" data-target="#abrirmodalmostrar">
-                                                        <i class="ace-icon fa fa-check bigger-120"></i>
-                                                    </button>
-
-                                                    <button class="btn btn-xs btn-info" type="button" data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}" data-toggle="modal" data-target="#abrirmodaleditar">
-                                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                    </button>
-
                                                     <form action="{{route('empleados.destroy', $empleado->id)}}" method="post">
+                                                        <button class="btn btn-xs btn-success" type="button"  data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}"  data-toggle="modal" data-target="#abrirmodalmostrar">
+                                                            <i class="ace-icon fa fa-check bigger-120"></i>
+                                                        </button>
+
+                                                        <button class="btn btn-xs btn-info" type="button" data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}" data-toggle="modal" data-target="#abrirmodaleditar">
+                                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                        </button>
+
                                                         @method('DELETE')
                                                         <button class="btn btn-xs btn-danger" type="submit" onclick="return confirm('Quieres eliminarlo?')">
                                                             <i class="ace-icon fa fa-trash-o bigger-120"></i>
