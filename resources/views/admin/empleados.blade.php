@@ -60,7 +60,7 @@
                                             <td>
                                                 <div class="hidden-sm hidden-xs btn-group">
                                                     <form action="{{route('empleados.destroy', $empleado->id)}}" method="post">
-                                                        <button class="btn btn-xs btn-success" type="button"  data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}"  data-toggle="modal" data-target="#abrirmodalmostrar">
+                                                        <button class="btn btn-xs btn-success" type="button"  data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}" data-toggle="modal" data-target="#abrirmodalmostrar">
                                                             <i class="ace-icon fa fa-check bigger-120"></i>
                                                         </button>
 
@@ -111,7 +111,7 @@
                     <div class="modal-header">
                         <h4 class="modal-title">Editar Empleado</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                            <span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -133,7 +133,7 @@
             <div class="modal-dialog modal-primary modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Editar categoría</h4>
+                        <h4 class="modal-title">Agregar Empleado</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                         </button>
@@ -155,7 +155,7 @@
             <div class="modal-dialog modal-primary modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Editar categoría</h4>
+                        <h4 class="modal-title">Ver Empleado</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                         </button>

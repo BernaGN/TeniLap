@@ -99,6 +99,6 @@ class EmpleadoController extends Controller
         $empleado = Empleado::findOrFail($id);
         $empleado->delete();
         return Redirect::to('empleados')
-                        ->with('success','Eliminado correctamente');
+            ->with('success','Eliminado correctamente');
     }
 }
