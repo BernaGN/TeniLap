@@ -77,7 +77,7 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        return "Hola";
+        //
     }
 
     /**
