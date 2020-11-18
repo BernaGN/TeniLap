@@ -9,6 +9,9 @@ use App\Http\Controllers\PagoController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CalendarioController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\AcercaDeController;
+use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\IniciarSesionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +26,9 @@ use App\Http\Controllers\InicioController;
 
 Route::resource('/inicio', InicioController::class);
 Route::resource('/', InicioController::class);
+Route::resource('/acerca-de', AcercaDeController::class);
+Route::resource('/contacto', ContactoController::class);
+Route::resource('/iniciar-sesion', IniciarSesionController::class);
 
 Route::resource('/admin', AdminController::class);
 
