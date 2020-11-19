@@ -7,7 +7,7 @@ use App\Models\Dispositivo;
 use DB;
 use Illuminate\Support\Facades\Redirect;
 
-class InicioController extends Controller
+class InformacionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,24 @@ class InicioController extends Controller
      */
     public function index(Request $request)
     {
-        return view('usuario.index');
+        if($request) {
+            //$material = MaterialQuimico::findOrFail($id);
+            $sql = trim($request->get('buscarTexto'));
+            $dispositivo = DB::table('dispositivos')
+                ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
+                ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
+                ->join('empleados', 'dispositivos.empleado_id', '=', 'empleados.id')
+                ->select('dispositivos.id', 'dispositivos.nombre',
+                'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
+                'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
+                'tipos.nombre as tipo','clientes.nombre as cliente',
+                'empleados.nombre as empleado')
+                ->where('dispositivos.id', '=', $sql)
+                ->get();
+            return view('usuario.ver-informacion', [
+                'dispositivo' => $dispositivo,
+            ]);
+        }
     }
 
     /**
@@ -46,7 +63,7 @@ class InicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
         //
     }

@@ -12,6 +12,7 @@ use App\Http\Controllers\InicioController;
 use App\Http\Controllers\AcercaDeController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\IniciarSesionController;
+use App\Http\Controllers\InformacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ use App\Http\Controllers\IniciarSesionController;
 
 Route::resource('/inicio', InicioController::class);
 Route::resource('/', InicioController::class);
+Route::resource('/informacion', InformacionController::class);
 Route::resource('/acerca-de', AcercaDeController::class);
 Route::resource('/contacto', ContactoController::class);
 Route::resource('/iniciar-sesion', IniciarSesionController::class);

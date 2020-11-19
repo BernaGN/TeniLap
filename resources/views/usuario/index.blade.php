@@ -32,11 +32,15 @@
                     <li data-target="#carousel-1" data-slide-to="0"></li>
                     <li data-target="#carousel-1" data-slide-to="1"></li>
                     <li data-target="#carousel-1" data-slide-to="2" class="active"></li>
-                    </ol>
+                </ol>
             </div>
             <div class="row justify-content-center" style="margin: 0;margin-top: 10px;">
-                <div class="col-8"><input class="form-control-lg" type="text" style="width: 100%;border-style: none;border-color: rgb(0,0,0,.5);" placeholder="Número ID"></div>
-                <div class="col-4"><button class="btn btn-secondary btn-lg" type="button" style="width: 100%;">Consultar</button></div>
+                <form action="{{route('informacion.index')}}" method="get" class="col-12">
+                    <div class="row justify-content-center" style="margin-bottom: 5px;">
+                        <div class="col-8 align-self-center"><input name="buscarTexto" class="form-control-lg" type="text" style="width: 100%;border-style: none;border-color: rgb(0,0,0,.5);" placeholder="Número ID"></div>
+                        <div class="col-4"><button class="btn btn-secondary btn-lg" type="submit" style="width: 100%;">Consultar</button></div>
+                    </div>
+                </form>
             </div>
         </section>
         <section class="clean-block features">
