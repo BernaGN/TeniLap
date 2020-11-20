@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Dispositivo;
+use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class DispositivoController extends Controller
 {
@@ -13,7 +16,22 @@ class DispositivoController extends Controller
      */
     public function index()
     {
-        return view('admin.dispositivos');
+        $dispositivo = DB::table('dispositivos')
+            ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
+            ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
+            ->join('empleados', 'dispositivos.empleado_id', '=', 'empleados.id')
+            ->select('dispositivos.id', 'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
+                'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
+                'tipos.nombre as tipo','clientes.nombre as cliente',
+                'empleados.nombre as empleado')
+            ->get();
+        return view('admin.dispositivos',[
+            "nombre" =>'Dispositivos',
+            'dispositivos' => $dispositivo,
+            'tipos' => DB::table('tipos')
+                ->orderBy('id', 'ASC')
+                ->get(),
+        ]);
     }
 
     /**
@@ -68,7 +86,14 @@ class DispositivoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dispositivo = Dispositivo::findOrFail($request->id_dispositivo);
+        $dispositivo->marca = $request->marca;
+        $dispositivo->fecha_inicio = $request->fecha_inicio;
+        $dispositivo->fecha_entrega = $request->fecha_entrega;
+        $dispositivo->estado = $request->estado;
+        $dispositivo->total = $request->total;
+        $dispositivo->save();
+        return Redirect::to('dispositivos');
     }
 
     /**
@@ -79,6 +104,9 @@ class DispositivoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dispositivo = Dispositivo::findOrFail($id);
+        $dispositivo->delete();
+        return Redirect::to('dispositivos')
+            ->with('success','Eliminado correctamente');
     }
 }

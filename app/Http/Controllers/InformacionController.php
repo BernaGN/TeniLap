@@ -24,10 +24,10 @@ class InformacionController extends Controller
                 ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
                 ->join('empleados', 'dispositivos.empleado_id', '=', 'empleados.id')
                 ->select('dispositivos.id', 'dispositivos.nombre',
-                'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
-                'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
-                'tipos.nombre as tipo','clientes.nombre as cliente',
-                'empleados.nombre as empleado')
+                    'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
+                    'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
+                    'tipos.nombre as tipo','clientes.nombre as cliente',
+                    'empleados.nombre as empleado')
                 ->where('dispositivos.id', '=', $sql)
                 ->get();
             return view('usuario.ver-informacion', [
