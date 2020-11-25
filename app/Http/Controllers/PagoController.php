@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Dispositivo;
+use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class PagoController extends Controller
 {
