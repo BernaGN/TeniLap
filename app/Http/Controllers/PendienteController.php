@@ -34,6 +34,12 @@ class PendienteController extends Controller
             'tipos' => DB::table('tipos')
                 ->orderBy('id', 'ASC')
                 ->get(),
+            'empleados' => DB::table('empleados')
+                ->orderBy('id', 'ASC')
+                ->get(),
+            'clientes' => DB::table('clientes')
+                ->orderBy('id', 'ASC')
+                ->get(),
         ]);
     }
 

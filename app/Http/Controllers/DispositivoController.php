@@ -31,6 +31,12 @@ class DispositivoController extends Controller
             'tipos' => DB::table('tipos')
                 ->orderBy('id', 'ASC')
                 ->get(),
+            'empleados' => DB::table('empleados')
+                ->orderBy('id', 'ASC')
+                ->get(),
+            'clientes' => DB::table('clientes')
+                ->orderBy('id', 'ASC')
+                ->get(),
         ]);
     }
 
@@ -52,7 +58,23 @@ class DispositivoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dispositivo = new Dispositivo();
+        $dispositivo->marca = $request->marca;
+        $dispositivo->tipo_id = $request->tipo;
+        $dispositivo->fecha_inicio = $request->fecha_inicio;
+        $dispositivo->fecha_entrega = $request->fecha_entrega;
+        $dispositivo->estado = $request->estado;
+        $dispositivo->total = $request->total;
+        $dispositivo->cliente_id = $request->cliente;
+        $dispositivo->empleado_id = $request->empleado;
+        $dispositivo->anticipo = $request->anticipo;
+        $dispositivo->soluciones = $request->soluciones;
+        $dispositivo->color = $request->color;
+        $dispositivo->no_serie = $request->no_serie;
+        $dispositivo->observaciones = $request->observaciones;
+        //return $dispositivo;
+        $dispositivo->save();
+        return Redirect::to('dispositivos');
     }
 
     /**
