@@ -25,7 +25,39 @@
             </div>
 
             <div class="main-content">
-                <p>Pagos</p>
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1>
+                            Pagos
+                        </h1>
+                    </div><!-- /.page-header -->
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table id="simple-table" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Dispositivo</th>
+                                            <th>Total</th>
+                                            <th>Cliente</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach($dispositivos as $dispositivo)
+                                        <tr>
+                                            <td>{{$dispositivo->tipo." ".$dispositivo->marca}}</td>
+                                            <td>{{$dispositivo->total}}</td>
+                                            <td>{{$dispositivo->cliente}}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div><!-- /.span -->
+                        </div><!-- /.row -->
+                    </div><!-- /.page-content -->
+                </div>
             </div><!-- /.main-content -->
 
             @include('admin.layouts.pie')

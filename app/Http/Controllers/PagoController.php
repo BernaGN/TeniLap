@@ -16,7 +16,15 @@ class PagoController extends Controller
      */
     public function index()
     {
-        return view('admin.pagos');
+        $dispositivo = DB::table('dispositivos')
+            ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
+            ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
+            ->select('dispositivos.marca', 'dispositivos.total',
+                'tipos.nombre as tipo','clientes.nombre as cliente')
+            ->get();
+        return view('admin.pagos',[
+            'dispositivos' => $dispositivo,
+        ]);
     }
 
     /**
