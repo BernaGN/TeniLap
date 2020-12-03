@@ -38,5 +38,9 @@ Route::resource('/clientes', ClienteController::class);
 Route::resource('/dispositivos', DispositivoController::class);
 Route::resource('/pendientes', PendienteController::class);
 Route::resource('/pagos', PagoController::class);
-Route::resource('/empleados', EmpleadoController::class);
+Route::resource('/empleados', UserController::class);
 Route::resource('/calendario', CalendarioController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

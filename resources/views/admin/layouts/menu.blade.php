@@ -99,7 +99,7 @@
                         <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                         <span class="user-info">
                             <small>Welcome,</small>
-                            Jason
+                            {{Auth::user()->name}}
                         </span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
@@ -123,10 +123,15 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
-                                <i class="ace-icon fa fa-power-off"></i>
-                                Logout
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </li>

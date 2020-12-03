@@ -29,12 +29,12 @@ class CreateDispositivosTable extends Migration
             $table->string('observaciones', 200);
             $table->integer('cliente_id')->unsigned();
             $table->integer('tipo_id')->unsigned();
-            $table->integer('empleado_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->foreign('tipo_id')->references('id')->on('tipos');
-            $table->foreign('empleado_id')->references('id')->on('empleados');
+            $table->foreign('user_id')->references('id')->on('users');
 
         });
     }
@@ -46,6 +46,6 @@ class CreateDispositivosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('dispositivos');
     }
 }
