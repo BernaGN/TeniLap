@@ -52,7 +52,7 @@
                                         @foreach($empleados as $empleado)
                                         <tr>
                                             <td>
-                                                <a href="#">{{$empleado->nombre}}</a>
+                                                <a href="#">{{$empleado->name}}</a>
                                             </td>
                                             <td>{{$empleado->email}}</td>
                                             <td class="hidden-480"></td>
@@ -60,11 +60,11 @@
                                             <td>
                                                 <div class="hidden-sm hidden-xs btn-group">
                                                     <form action="{{route('empleados.destroy', $empleado->id)}}" method="post">
-                                                        <button class="btn btn-xs btn-success" type="button"  data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}" data-toggle="modal" data-target="#abrirmodalmostrar">
+                                                        <button class="btn btn-xs btn-success" type="button"  data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->name}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}" data-toggle="modal" data-target="#abrirmodalmostrar">
                                                             <i class="ace-icon fa fa-check bigger-120"></i>
                                                         </button>
 
-                                                        <button class="btn btn-xs btn-info" type="button" data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->nombre}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}" data-toggle="modal" data-target="#abrirmodaleditar">
+                                                        <button class="btn btn-xs btn-info" type="button" data-id_empleado="{{$empleado->id}}" data-nombre="{{$empleado->name}}" data-email="{{$empleado->email}}" data-password="{{$empleado->password}}" data-toggle="modal" data-target="#abrirmodaleditar">
                                                             <i class="ace-icon fa fa-pencil bigger-120"></i>
                                                         </button>
 

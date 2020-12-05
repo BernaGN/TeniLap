@@ -22,11 +22,11 @@ class DispositivoController extends Controller
         $dispositivo = DB::table('dispositivos')
             ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
             ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
-            ->join('empleados', 'dispositivos.empleado_id', '=', 'empleados.id')
+            ->join('users', 'dispositivos.user_id', '=', 'users.id')
             ->select('dispositivos.id', 'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
                 'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
                 'tipos.nombre as tipo','clientes.nombre as cliente',
-                'empleados.nombre as empleado')
+                'users.name as empleado')
             ->get();
         return view('admin.dispositivos',[
             "nombre" =>'Dispositivos',
@@ -34,7 +34,7 @@ class DispositivoController extends Controller
             'tipos' => DB::table('tipos')
                 ->orderBy('id', 'ASC')
                 ->get(),
-            'empleados' => DB::table('empleados')
+            'empleados' => DB::table('users')
                 ->orderBy('id', 'ASC')
                 ->get(),
             'clientes' => DB::table('clientes')
@@ -69,7 +69,7 @@ class DispositivoController extends Controller
         $dispositivo->estado = $request->estado;
         $dispositivo->total = $request->total;
         $dispositivo->cliente_id = $request->cliente;
-        $dispositivo->empleado_id = $request->empleado;
+        $dispositivo->user_id = $request->empleado;
         $dispositivo->anticipo = $request->anticipo;
         $dispositivo->soluciones = $request->soluciones;
         $dispositivo->color = $request->color;

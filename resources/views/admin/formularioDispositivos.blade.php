@@ -3,9 +3,11 @@
     <div class="col-md-9">
         <select name="tipo" id="tipo" class="form-control">
             <option value=""></option>" <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
+            @isset($dispositivo)
             @foreach($tipos as $tipo)
             <option value="{{$tipo->id}}" {{$tipo->nombre == $dispositivo->tipo ? 'selected' : ''}}>{{$tipo->nombre}}</option>
             @endforeach
+            @endisset
         </select>
     </div>
 </div>

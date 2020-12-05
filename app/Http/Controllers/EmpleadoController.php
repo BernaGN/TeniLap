@@ -17,7 +17,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         return view('admin.empleados', [
-            'empleados' => DB::table('empleados')
+            'empleados' => DB::table('users')
                 ->orderBY('id', 'ASC')
                 ->get()
         ]);

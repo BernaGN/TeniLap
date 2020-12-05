@@ -22,11 +22,12 @@ class PendienteController extends Controller
         $dispositivo = DB::table('dispositivos')
             ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
             ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
-            ->join('empleados', 'dispositivos.empleado_id', '=', 'empleados.id')
+            ->join('users', 'dispositivos.user_id', '=', 'users.id')
             ->select('dispositivos.id', 'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
                 'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
                 'tipos.nombre as tipo','clientes.nombre as cliente',
-                'empleados.nombre as empleado')
+                'users.name as empleado')
+                ->where('dispositivos.estado', '=', 'Pendiente')
             ->get();
         return view('admin.dispositivos',[
             "nombre" =>'Pendientes',
@@ -34,7 +35,7 @@ class PendienteController extends Controller
             'tipos' => DB::table('tipos')
                 ->orderBy('id', 'ASC')
                 ->get(),
-            'empleados' => DB::table('empleados')
+            'empleados' => DB::table('users')
                 ->orderBy('id', 'ASC')
                 ->get(),
             'clientes' => DB::table('clientes')
