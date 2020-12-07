@@ -1,19 +1,20 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="nombre">Nombre</label>
     <div class="col-md-9">
-        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre de categoría" required pattern="^[a-zA-Z_áéíóúñ\s]{0,30}$">
+        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre del empleado" required
+            pattern="^[a-zA-Z_áéíóúñ\s]{0,30}$">
     </div>
 </div>
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Email</label>
     <div class="col-md-9">
-    <input type="text" name="email" id="email" class="form-control" placeholder="Ingrese Email">
+        <input type="text" name="email" id="email" class="form-control" placeholder="Ingrese Email">
     </div>
 </div>
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Contraseña</label>
     <div class="col-md-9">
-    <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su Contraseña">
+        <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su Contraseña">
     </div>
 </div>
 <div class="modal-footer">

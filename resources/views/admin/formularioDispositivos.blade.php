@@ -2,11 +2,14 @@
     <label class="col-md-3 form-control-label" for="descripcion">Tipo</label>
     <div class="col-md-9">
         <select name="tipo" id="tipo" class="form-control">
-            <option value=""></option>" <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
+            <option value=""></option>"
+            <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
             @isset($dispositivo)
-            @foreach($tipos as $tipo)
-            <option value="{{$tipo->id}}" {{$tipo->nombre == $dispositivo->tipo ? 'selected' : ''}}>{{$tipo->nombre}}</option>
-            @endforeach
+                @foreach ($tipos as $tipo)
+                    <option value="{{ $tipo->id }}" {{ $tipo->nombre == $dispositivo->tipo ? 'selected' : '' }}>
+                        {{ $tipo->nombre }}
+                    </option>
+                @endforeach
             @endisset
         </select>
     </div>
@@ -14,19 +17,21 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Marca</label>
     <div class="col-md-9">
-    <input type="text" name="marca" id="marca" class="form-control" placeholder="Ingrese su Telefono">
+        <input type="text" name="marca" id="marca" class="form-control" placeholder="Ingrese la Marca">
     </div>
 </div>
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Fecha de Inicio</label>
     <div class="col-md-9">
-    <input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control" placeholder="Ingrese Email">
+        <input type="text" name="fecha_inicio" id="fecha_inicio" class="form-control"
+            placeholder="Ingrese fecha de inicio">
     </div>
 </div>
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Fecha de Entrega</label>
     <div class="col-md-9">
-    <input type="text" name="fecha_entrega" id="fecha_entrega" class="form-control" placeholder="Ingrese Email">
+        <input type="text" name="fecha_entrega" id="fecha_entrega" class="form-control"
+            placeholder="Ingrese fecha de entrega">
     </div>
 </div>
 <div class="form-group row">
@@ -43,19 +48,31 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Total</label>
     <div class="col-md-9">
-    <input type="text" name="total" id="total" class="form-control" placeholder="Ingrese su Telefono">
+        <input type="text" name="total" id="total" class="form-control" placeholder="Ingrese el total">
     </div>
 </div>
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Cliente</label>
     <div class="col-md-9">
-    <input type="text" name="cliente" id="cliente" class="form-control" placeholder="Ingrese su Telefono">
+        <select name="cliente" id="cliente" class="form-control">
+            <option value=""></option>"
+            <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
+            @foreach ($clientes as $cliente)
+                <option value="{{ $cliente->id }}">{{ $cliente->nombre }}</option>
+            @endforeach
+        </select>
     </div>
 </div>
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="descripcion">Empleado</label>
     <div class="col-md-9">
-    <input type="text" name="empleado" id="empleado" class="form-control" placeholder="Ingrese su Telefono">
+        <select name="empleado" id="empleado" class="form-control">
+            <option value=""></option>"
+            <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
+            @foreach ($empleados as $empleado)
+                <option value="{{ $empleado->id }}">{{ $empleado->name }}</option>
+            @endforeach
+        </select>
     </div>
 </div>
 <div class="modal-footer">
