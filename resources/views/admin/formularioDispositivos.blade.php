@@ -57,9 +57,13 @@
         <select name="cliente" id="cliente" class="form-control">
             <option value=""></option>"
             <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
-            @foreach ($clientes as $cliente)
-                <option value="{{ $cliente->id }}">{{ $cliente->nombre }}</option>
-            @endforeach
+            @isset($clientes)
+                @foreach ($clientes as $cliente)
+                    <option value="{{ $cliente->id }}" {{ $cliente->nombre == $dispositivo->cliente ? 'selected' : '' }}>
+                        {{ $cliente->nombre }}
+                    </option>
+                @endforeach
+            @endisset
         </select>
     </div>
 </div>
@@ -70,7 +74,9 @@
             <option value=""></option>"
             <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
             @foreach ($empleados as $empleado)
-                <option value="{{ $empleado->id }}">{{ $empleado->name }}</option>
+                <option value="{{ $empleado->id }}" {{ $empleado->name == $dispositivo->empleado ? 'selected' : '' }}>
+                    {{ $empleado->name }}
+                </option>
             @endforeach
         </select>
     </div>
