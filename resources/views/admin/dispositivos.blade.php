@@ -43,9 +43,12 @@
                         </h1>
                     </div><!-- /.page-header -->
                     <div class="col-xs-12">
-                        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#abrirmodal">
-                            <i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Agregar Categoría
-                        </button><br><br>
+                        @if ($nombre != 'Pendientes')
+                            <button class="btn btn-primary btn-lg" type="button" data-toggle="modal"
+                                data-target="#abrirmodal">
+                                <i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Agregar Dispositivos
+                            </button><br><br>
+                        @endif
                         <!-- PAGE CONTENT BEGINS -->
                         <div class="row">
                             <div class="col-xs-12">
@@ -59,7 +62,9 @@
                                             <th>Total</th>
                                             <th>Cliente</th>
                                             <th>Empleado</th>
-                                            <th></th>
+                                            @if ($nombre != 'Pendientes')
+                                                <th></th>
+                                            @endif
                                         </tr>
                                     </thead>
 
@@ -73,47 +78,51 @@
                                                 <td class="hidden-480">${{ $dispositivo->total }}</td>
                                                 <td class="hidden-480">{{ $dispositivo->cliente }}</td>
                                                 <td class="hidden-480">{{ $dispositivo->empleado }}</td>
-                                                <td>
-                                                    <div class="hidden-sm hidden-xs btn-group">
-                                                        <form action="{{ route('dispositivos.destroy', $dispositivo->id) }}"
-                                                            method="post">
-                                                            <button class="btn btn-xs btn-success" type="button"
-                                                                data-id_dispositivo="{{ $dispositivo->id }}"
-                                                                data-tipo="{{ $dispositivo->tipo }}"
-                                                                data-marca="{{ $dispositivo->marca }}"
-                                                                data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
-                                                                data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
-                                                                data-estado="{{ $dispositivo->estado }}"
-                                                                data-total="{{ $dispositivo->total }}"
-                                                                data-cliente="{{ $dispositivo->cliente }}"
-                                                                data-empleado="{{ $dispositivo->empleado }}"
-                                                                data-toggle="modal" data-target="#abrirmodalmostrar">
-                                                                <i class="ace-icon fa fa-check bigger-120"></i>
-                                                            </button>
 
-                                                            <button class="btn btn-xs btn-info" type="button"
-                                                                data-id_dispositivo="{{ $dispositivo->id }}"
-                                                                data-tipo="{{ $dispositivo->tipo }}"
-                                                                data-marca="{{ $dispositivo->marca }}"
-                                                                data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
-                                                                data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
-                                                                data-estado="{{ $dispositivo->estado }}"
-                                                                data-total="{{ $dispositivo->total }}"
-                                                                data-cliente="{{ $dispositivo->cliente }}"
-                                                                data-empleado="{{ $dispositivo->empleado }}"
-                                                                data-toggle="modal" data-target="#abrirmodaleditar">
-                                                                <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                            </button>
+                                                @if ($nombre != 'Pendientes')
+                                                    <td>
+                                                        <div class="hidden-sm hidden-xs btn-group">
+                                                            <form
+                                                                action="{{ route('dispositivos.destroy', $dispositivo->id) }}"
+                                                                method="post">
+                                                                <button class="btn btn-xs btn-success" type="button"
+                                                                    data-id_dispositivo="{{ $dispositivo->id }}"
+                                                                    data-tipo="{{ $dispositivo->tipo }}"
+                                                                    data-marca="{{ $dispositivo->marca }}"
+                                                                    data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
+                                                                    data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
+                                                                    data-estado="{{ $dispositivo->estado }}"
+                                                                    data-total="{{ $dispositivo->total }}"
+                                                                    data-cliente="{{ $dispositivo->cliente }}"
+                                                                    data-empleado="{{ $dispositivo->empleado }}"
+                                                                    data-toggle="modal" data-target="#abrirmodalmostrar">
+                                                                    <i class="ace-icon fa fa-check bigger-120"></i>
+                                                                </button>
 
-                                                            @method('DELETE')
-                                                            <button class="btn btn-xs btn-danger" type="submit"
-                                                                onclick="return confirm('Quieres eliminarlo?')">
-                                                                <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                            </button>
-                                                            @csrf
-                                                        </form>
-                                                    </div>
-                                                </td>
+                                                                <button class="btn btn-xs btn-info" type="button"
+                                                                    data-id_dispositivo="{{ $dispositivo->id }}"
+                                                                    data-tipo="{{ $dispositivo->tipo }}"
+                                                                    data-marca="{{ $dispositivo->marca }}"
+                                                                    data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
+                                                                    data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
+                                                                    data-estado="{{ $dispositivo->estado }}"
+                                                                    data-total="{{ $dispositivo->total }}"
+                                                                    data-cliente="{{ $dispositivo->cliente }}"
+                                                                    data-empleado="{{ $dispositivo->empleado }}"
+                                                                    data-toggle="modal" data-target="#abrirmodaleditar">
+                                                                    <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                                </button>
+
+                                                                @method('DELETE')
+                                                                <button class="btn btn-xs btn-danger" type="submit"
+                                                                    onclick="return confirm('Quieres eliminarlo?')">
+                                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                                </button>
+                                                                @csrf
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
 
@@ -211,6 +220,22 @@
             <!-- /.modal-dialog -->
         </div>
         <!--Fin del modal-->
+        <script type="text/javascript">
+            /*EDITAR CATEGORIA EN VENTANA MODAL*/
+            $('#abrirmodal').on('show.bs.modal', function(event) {
+
+                $(".modal-body #tipo").prop("disabled", false);
+                $(".modal-body #marca").prop("disabled", false);
+                $(".modal-body #fecha_inicio").prop("disabled", false);
+                $(".modal-body #fecha_entrega").prop("disabled", false);
+                $(".modal-body #estado").prop("disabled", false);
+                $(".modal-body #total").prop("disabled", false);
+                $(".modal-body #cliente").prop("disabled", false);
+                $(".modal-body #empleado").prop("disabled", false);
+                $(".modal-body #guardar").prop("disabled", false);
+            })
+
+        </script>
         <script type="text/javascript">
             /*EDITAR CATEGORIA EN VENTANA MODAL*/
             $('#abrirmodaleditar').on('show.bs.modal', function(event) {
