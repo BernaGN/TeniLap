@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\facades\Mail;
 
 class ContactoController extends Controller
 {
@@ -34,7 +35,15 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'titulo' => $request->titulo,
+            'contenido' => $request->contenido,
+        ];
+        Mail::send('emails.test', $data, function ($message) {
+            $message->from('bernardojesusmartinezramirez@gmail.com', 'Bernardo Jesús Martínez Ramírez');
+            $message->to('benano51@gmail.com', 'Bernardo Martinez');
+            $message->subject('Reparacion');
+        });
     }
 
     /**
