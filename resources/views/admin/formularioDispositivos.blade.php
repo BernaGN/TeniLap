@@ -2,8 +2,7 @@
     <label class="col-md-3 form-control-label" for="descripcion">Tipo</label>
     <div class="col-md-9">
         <select name="tipo" id="tipo" class="form-control">
-            <option value=""></option>"
-            <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
+            <option value=""></option>
             @isset($dispositivo)
                 @foreach ($tipos as $tipo)
                     <option value="{{ $tipo->id }}" {{ $tipo->nombre == $dispositivo->tipo ? 'selected' : '' }}>
@@ -56,7 +55,6 @@
     <div class="col-md-9">
         <select name="cliente" id="cliente" class="form-control">
             <option value=""></option>"
-            <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
             @isset($clientes)
                 @foreach ($clientes as $cliente)
                     <option value="{{ $cliente->id }}" {{ $cliente->nombre == $dispositivo->cliente ? 'selected' : '' }}>
@@ -72,12 +70,13 @@
     <div class="col-md-9">
         <select name="empleado" id="empleado" class="form-control">
             <option value=""></option>"
-            <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
-            @foreach ($empleados as $empleado)
-                <option value="{{ $empleado->id }}" {{ $empleado->name == $dispositivo->empleado ? 'selected' : '' }}>
-                    {{ $empleado->name }}
-                </option>
-            @endforeach
+            @isset($empleados)
+                @foreach ($empleados as $empleado)
+                    <option value="{{ $empleado->id }}" {{ $empleado->name == $dispositivo->empleado ? 'selected' : '' }}>
+                        {{ $empleado->name }}
+                    </option>
+                @endforeach
+            @endisset
         </select>
     </div>
 </div>
