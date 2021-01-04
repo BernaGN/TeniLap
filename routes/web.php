@@ -29,7 +29,7 @@ Route::resource('/inicio', InicioController::class);
 Route::resource('/', InicioController::class);
 Route::resource('/informacion', InformacionController::class);
 Route::resource('/acerca-de', AcercaDeController::class);
-Route::resource('/contacto', ContactoController::class);
+//Route::resource('/contacto', ContactoController::class);
 Route::resource('/iniciar-sesion', IniciarSesionController::class);
 
 Route::resource('/admin', AdminController::class);
@@ -39,7 +39,7 @@ Route::resource('/dispositivos', DispositivoController::class);
 Route::resource('/pendientes', PendienteController::class);
 Route::resource('/pagos', PagoController::class);
 Route::resource('/empleados', EmpleadoController::class);
-Route::resource('/calendario', CalendarioController::class);
+//Route::resource('/calendario', CalendarioController::class);
 
 Auth::routes();
 

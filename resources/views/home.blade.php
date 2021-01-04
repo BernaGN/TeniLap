@@ -1,1 +1,4 @@
-@include('admin.index')
+<script>
+    window.location = "{{ route('dispositivos.index') }}";
+
+</script>
