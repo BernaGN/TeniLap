@@ -4,9 +4,11 @@
         <select name="tipo" id="tipo" class="form-control">
             <option value=""></option>"
             <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
-            @foreach ($tipos as $tipo)
-                <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
-            @endforeach
+            @isset($tipos)
+                @foreach ($tipos as $tipo)
+                    <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
+                @endforeach
+            @endisset
         </select>
     </div>
 </div>
@@ -53,9 +55,11 @@
         <select name="cliente" id="cliente" class="form-control">
             <option value=""></option>"
             <!--$cliente->localidad == $localidad->nombre ? 'selected' : ''--->
-            @foreach ($clientes as $cliente)
-                <option value="{{ $cliente->id }}">{{ $cliente->nombre }}</option>
-            @endforeach
+            @isset($clientes)
+                @foreach ($clientes as $cliente)
+                    <option value="{{ $cliente->id }}">{{ $cliente->nombre }}</option>
+                @endforeach
+            @endisset
         </select>
     </div>
 </div>
