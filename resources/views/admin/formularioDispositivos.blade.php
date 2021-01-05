@@ -70,7 +70,7 @@
     <div class="col-md-9">
         <select name="empleado" id="empleado" class="form-control">
             <option value=""></option>"
-            @isset($empleados)
+            @isset($empleados, $dispositivo)
                 @foreach ($empleados as $empleado)
                     <option value="{{ $empleado->id }}" {{ $empleado->name == $dispositivo->empleado ? 'selected' : '' }}>
                         {{ $empleado->name }}
