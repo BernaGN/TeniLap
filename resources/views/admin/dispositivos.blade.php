@@ -69,62 +69,65 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($dispositivos as $dispositivo)
-                                            <tr>
-                                                <td>{{ $dispositivo->tipo }} {{ $dispositivo->marca }}</td>
-                                                <td class="hidden-480">{{ $dispositivo->fecha_inicio }}</td>
-                                                <td class="hidden-480">{{ $dispositivo->fecha_entrega }}</td>
-                                                <td class="hidden-480">{{ $dispositivo->estado }}</td>
-                                                <td class="hidden-480">${{ $dispositivo->total }}</td>
-                                                <td class="hidden-480">{{ $dispositivo->cliente }}</td>
-                                                <td class="hidden-480">{{ $dispositivo->empleado }}</td>
+                                        @isset($dispositivos)
 
-                                                @if ($nombre != 'Pendientes')
-                                                    <td>
-                                                        <div class="hidden-sm hidden-xs btn-group">
-                                                            <form
-                                                                action="{{ route('dispositivos.destroy', $dispositivo->id) }}"
-                                                                method="post">
-                                                                <button class="btn btn-xs btn-success" type="button"
-                                                                    data-id_dispositivo="{{ $dispositivo->id }}"
-                                                                    data-tipo="{{ $dispositivo->tipo }}"
-                                                                    data-marca="{{ $dispositivo->marca }}"
-                                                                    data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
-                                                                    data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
-                                                                    data-estado="{{ $dispositivo->estado }}"
-                                                                    data-total="{{ $dispositivo->total }}"
-                                                                    data-cliente="{{ $dispositivo->cliente }}"
-                                                                    data-empleado="{{ $dispositivo->empleado }}"
-                                                                    data-toggle="modal" data-target="#abrirmodalmostrar">
-                                                                    <i class="ace-icon fa fa-check bigger-120"></i>
-                                                                </button>
+                                            @foreach ($dispositivos as $dispositivo)
+                                                <tr>
+                                                    <td>{{ $dispositivo->tipo }} {{ $dispositivo->marca }}</td>
+                                                    <td class="hidden-480">{{ $dispositivo->fecha_inicio }}</td>
+                                                    <td class="hidden-480">{{ $dispositivo->fecha_entrega }}</td>
+                                                    <td class="hidden-480">{{ $dispositivo->estado }}</td>
+                                                    <td class="hidden-480">${{ $dispositivo->total }}</td>
+                                                    <td class="hidden-480">{{ $dispositivo->cliente }}</td>
+                                                    <td class="hidden-480">{{ $dispositivo->empleado }}</td>
 
-                                                                <button class="btn btn-xs btn-info" type="button"
-                                                                    data-id_dispositivo="{{ $dispositivo->id }}"
-                                                                    data-tipo="{{ $dispositivo->tipo }}"
-                                                                    data-marca="{{ $dispositivo->marca }}"
-                                                                    data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
-                                                                    data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
-                                                                    data-estado="{{ $dispositivo->estado }}"
-                                                                    data-total="{{ $dispositivo->total }}"
-                                                                    data-cliente="{{ $dispositivo->cliente }}"
-                                                                    data-empleado="{{ $dispositivo->empleado }}"
-                                                                    data-toggle="modal" data-target="#abrirmodaleditar">
-                                                                    <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                                </button>
+                                                    @if ($nombre != 'Pendientes')
+                                                        <td>
+                                                            <div class="hidden-sm hidden-xs btn-group">
+                                                                <form
+                                                                    action="{{ route('dispositivos.destroy', $dispositivo->id) }}"
+                                                                    method="post">
+                                                                    <button class="btn btn-xs btn-success" type="button"
+                                                                        data-id_dispositivo="{{ $dispositivo->id }}"
+                                                                        data-tipo="{{ $dispositivo->tipo }}"
+                                                                        data-marca="{{ $dispositivo->marca }}"
+                                                                        data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
+                                                                        data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
+                                                                        data-estado="{{ $dispositivo->estado }}"
+                                                                        data-total="{{ $dispositivo->total }}"
+                                                                        data-cliente="{{ $dispositivo->cliente }}"
+                                                                        data-empleado="{{ $dispositivo->empleado }}"
+                                                                        data-toggle="modal" data-target="#abrirmodalmostrar">
+                                                                        <i class="ace-icon fa fa-check bigger-120"></i>
+                                                                    </button>
 
-                                                                @method('DELETE')
-                                                                <button class="btn btn-xs btn-danger" type="submit"
-                                                                    onclick="return confirm('Quieres eliminarlo?')">
-                                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                                </button>
-                                                                @csrf
-                                                            </form>
-                                                        </div>
-                                                    </td>
-                                                @endif
-                                            </tr>
-                                        @endforeach
+                                                                    <button class="btn btn-xs btn-info" type="button"
+                                                                        data-id_dispositivo="{{ $dispositivo->id }}"
+                                                                        data-tipo="{{ $dispositivo->tipo }}"
+                                                                        data-marca="{{ $dispositivo->marca }}"
+                                                                        data-fecha_inicio="{{ $dispositivo->fecha_inicio }}"
+                                                                        data-fecha_entrega="{{ $dispositivo->fecha_entrega }}"
+                                                                        data-estado="{{ $dispositivo->estado }}"
+                                                                        data-total="{{ $dispositivo->total }}"
+                                                                        data-cliente="{{ $dispositivo->cliente }}"
+                                                                        data-empleado="{{ $dispositivo->empleado }}"
+                                                                        data-toggle="modal" data-target="#abrirmodaleditar">
+                                                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                                    </button>
+
+                                                                    @method('DELETE')
+                                                                    <button class="btn btn-xs btn-danger" type="submit"
+                                                                        onclick="return confirm('Quieres eliminarlo?')">
+                                                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                                    </button>
+                                                                    @csrf
+                                                                </form>
+                                                            </div>
+                                                        </td>
+                                                    @endif
+                                                </tr>
+                                            @endforeach
+                                        @endisset
 
                                     </tbody>
                                 </table>
