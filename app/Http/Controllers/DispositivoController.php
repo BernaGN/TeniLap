@@ -41,7 +41,7 @@ class DispositivoController extends Controller
             'clientes' => DB::table('clientes')
                 ->orderBy('id', 'ASC')
                 ->get(),
-            'user' => auth::user(),
+            'user' => auth::user()->name,
         ]);
     }
 

@@ -103,7 +103,7 @@
                         <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                         <span class="user-info">
                             <small>Welcome,</small>
-                            {{ $user->name }}
+                            {{ $user ?? '' }}
                         </span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
