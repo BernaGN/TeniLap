@@ -30,8 +30,6 @@ class InformacionController extends Controller
                     'users.name as empleado')
                 ->where('dispositivos.id', '=', $sql)
                 ->get();
-            if(empty($dispositivo))
-                return view('usuario.index');
             return view('usuario.ver-informacion', [
                 'dispositivo' => $dispositivo,
             ]);

@@ -45,7 +45,7 @@
                     <div class="row justify-content-center" style="margin-bottom: 5px;">
                         <div class="col-8 align-self-center"><input name="buscarTexto" class="form-control-lg" type="text"
                                 style="width: 100%;border-style: none;border-color: rgb(0,0,0,.5);" placeholder="Número ID"
-                                required></div>
+                                required pattern="\d{1,5}"></div>
                         <div class="col-4"><button class="btn btn-secondary btn-lg" type="submit"
                                 style="width: 100%;">Consultar</button></div>
                     </div>
