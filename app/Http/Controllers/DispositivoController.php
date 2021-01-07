@@ -9,7 +9,6 @@ use App\Models\Empleado;
 use App\Models\Cliente;
 use DB;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Auth;
 
 class DispositivoController extends Controller
 {
@@ -41,7 +40,6 @@ class DispositivoController extends Controller
             'clientes' => DB::table('clientes')
                 ->orderBy('id', 'ASC')
                 ->get(),
-            'user' => auth::user()->name,
         ]);
     }
 
