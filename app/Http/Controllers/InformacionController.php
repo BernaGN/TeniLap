@@ -22,7 +22,7 @@ class InformacionController extends Controller
             $dispositivo = DB::table('dispositivos')
                 ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
                 ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
-                ->join('users', 'dispositivos.empleado_id', '=', 'users.id')
+                ->join('users', 'dispositivos.user_id', '=', 'users.id')
                 ->select('dispositivos.id', 'dispositivos.nombre',
                     'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
                     'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
