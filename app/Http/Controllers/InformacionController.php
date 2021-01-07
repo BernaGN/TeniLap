@@ -22,12 +22,12 @@ class InformacionController extends Controller
             $dispositivo = DB::table('dispositivos')
                 ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
                 ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
-                ->join('empleados', 'dispositivos.empleado_id', '=', 'empleados.id')
+                ->join('users', 'dispositivos.empleado_id', '=', 'users.id')
                 ->select('dispositivos.id', 'dispositivos.nombre',
                     'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
                     'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
                     'tipos.nombre as tipo','clientes.nombre as cliente',
-                    'empleados.nombre as empleado')
+                    'users.nombre as empleado')
                 ->where('dispositivos.id', '=', $sql)
                 ->get();
             return view('usuario.ver-informacion', [
