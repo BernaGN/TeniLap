@@ -31,7 +31,7 @@
     <div class="col-md-9">
         <select name="localidad" id="localidad" class="form-control">
             <option value=""></option>
-            @isset($cliente)
+            @isset($localidades)
             @foreach($localidades as $localidad)
             <option value="{{$localidad->id}}" {{$cliente->localidad == $localidad->nombre ? 'selected' : ''}}>{{$localidad->nombre}}</option>
             @endforeach
