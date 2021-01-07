@@ -23,7 +23,7 @@ class InformacionController extends Controller
                 ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
                 ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
                 ->join('users', 'dispositivos.user_id', '=', 'users.id')
-                ->select('dispositivos.id', 'dispositivos.nombre',
+                ->select('dispositivos.id',
                     'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
                     'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
                     'tipos.nombre as tipo','clientes.nombre as cliente',

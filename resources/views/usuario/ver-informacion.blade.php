@@ -8,61 +8,61 @@
                     <p>Aqui puedes ver la informacion del dispositivo como el estado en el que se encuentra.</p>
                 </div>
                 <div class="row">
-                    @foreach($dispositivo as $dis)
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Id: </strong>
-                            {{$dis->id}}
+                    @foreach ($dispositivo as $dis)
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Id: </strong>
+                                {{ $dis->id }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Nombre: </strong>
-                            {{$dis->nombre}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Nombre: </strong>
+                                {{ $dis->tipo . ' ' . $dis->marca }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Dispositivo: </strong>
-                            {{$dis->tipo}} {{$dis->marca}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Dispositivo: </strong>
+                                {{ $dis->tipo }} {{ $dis->marca }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Fecha de Inicio: </strong>
-                            {{$dis->fecha_inicio}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Fecha de Inicio: </strong>
+                                {{ $dis->fecha_inicio }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Fecha de Entrega: </strong>
-                            {{$dis->fecha_entrega}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Fecha de Entrega: </strong>
+                                {{ $dis->fecha_entrega }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Estado: </strong>
-                            {{$dis->estado}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Estado: </strong>
+                                {{ $dis->estado }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Total: </strong>
-                            {{$dis->total}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Total: </strong>
+                                {{ $dis->total }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Cliente: </strong>
-                            {{$dis->cliente}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Cliente: </strong>
+                                {{ $dis->cliente }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Empleado: </strong>
-                            {{$dis->empleado}}
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Empleado: </strong>
+                                {{ $dis->empleado }}
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
