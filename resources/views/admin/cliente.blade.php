@@ -148,7 +148,7 @@
                         <form action="{{ route('clientes.store') }}" method="post" enctype="multipart/form-data"
                             class="form-horizontal" autocomplete="off">
                             @csrf
-                            @include('admin.formularioClientes')
+                            @include('admin.formularioClientesAgregar')
                         </form>
                     </div>
                 </div>
