@@ -28,7 +28,7 @@ class InformacionController extends Controller
                     'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
                     'tipos.nombre as tipo','clientes.nombre as cliente',
                     'users.name as empleado')
-                ->where('dispositivos.id', '=', $sql)
+                ->where('dispositivos.no_serie', '=', $sql)
                 ->get();
             return view('usuario.ver-informacion', [
                 'dispositivo' => $dispositivo,
