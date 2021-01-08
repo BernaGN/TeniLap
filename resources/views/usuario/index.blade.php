@@ -31,9 +31,9 @@
                     </div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><i
-                            class="fa fa-chevron-left"></i><span class="sr-only">Previous</span></a><a
+                            class="fa fa-chevron-left"></i><span class="sr-only">Anterior</span></a><a
                         class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><i
-                            class="fa fa-chevron-right"></i><span class="sr-only">Next</span></a></div>
+                            class="fa fa-chevron-right"></i><span class="sr-only">Siguiente</span></a></div>
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-1" data-slide-to="0"></li>
                     <li data-target="#carousel-1" data-slide-to="1"></li>
