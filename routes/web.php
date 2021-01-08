@@ -13,6 +13,8 @@ use App\Http\Controllers\AcercaDeController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\IniciarSesionController;
 use App\Http\Controllers\InformacionController;
+use App\Http\Controllers\ReparadoController;
+use App\Http\Controllers\EntregadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,8 @@ Route::resource('/admin', AdminController::class);
 
 Route::resource('/clientes', ClienteController::class);
 Route::resource('/dispositivos', DispositivoController::class);
+Route::resource('/reparados', ReparadoController::class);
+Route::resource('/entregados', EntregadoController::class);
 Route::resource('/pendientes', PendienteController::class);
 Route::resource('/pagos', PagoController::class);
 Route::resource('/empleados', EmpleadoController::class);

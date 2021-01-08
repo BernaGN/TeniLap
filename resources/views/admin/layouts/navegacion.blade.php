@@ -63,6 +63,28 @@
         </a>
     </li>
 
+    <li class="">
+        <a href="{{ route('reparados.index') }}">
+            <i class="menu-icon fa fa-check"></i>
+            <span class="menu-text">
+                Reparados
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
+    <li class="">
+        <a href="{{ route('entregados.index') }}">
+            <i class="menu-icon fa fa-ticket"></i>
+            <span class="menu-text">
+                Entregados
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
     <!--<li class="">
         <a href="{{-- route('calendario.index') --}}">
             <i class="menu-icon fa fa-calendar"></i>
