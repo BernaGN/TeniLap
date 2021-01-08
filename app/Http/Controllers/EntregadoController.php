@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Dispositivo;
+use App\Models\Tipo;
+use App\Models\Empleado;
+use App\Models\Cliente;
+use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class EntregadoController extends Controller
 {
