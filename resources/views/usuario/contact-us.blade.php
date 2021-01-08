@@ -4,9 +4,11 @@
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Contact Us</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
+                    <h2 class="text-info">Contactanos</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.0645228298495!2d-101.52561421457678!3d20.089589480052773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842c51d5e9d06ad5%3A0x26943f677e0086f0!2sAbasolo%2096%2C%20Centro%2C%2058507%20Puru%C3%A1ndiro%2C%20Mich.!5e0!3m2!1ses!2smx!4v1610082144614!5m2!1ses!2smx"
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
                 </div>
                 <form style="padding: 20px 40px;">
                     <div class="form-group" style="margin: 0;">
