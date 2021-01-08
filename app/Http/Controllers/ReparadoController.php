@@ -27,10 +27,10 @@ class ReparadoController extends Controller
                 'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
                 'tipos.nombre as tipo','clientes.nombre as cliente',
                 'users.name as empleado')
-            ->where('tipo', 'Reparado')
+            ->where('tipos.nombre', 'Reparado')
             ->get();
         return view('admin.dispositivos',[
-            "nombre" =>'Reparado',
+            "nombre" =>'Reparados',
             'dispositivos' => $dispositivo,
             'tipos' => DB::table('tipos')
                 ->orderBy('id', 'ASC')
