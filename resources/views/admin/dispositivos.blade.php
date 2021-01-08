@@ -73,6 +73,7 @@
 
                                             @foreach ($dispositivos as $dispositivo)
                                                 <tr>
+                                                    <td>{{ $dispositivo->id }}</td>
                                                     <td>{{ $dispositivo->tipo }} {{ $dispositivo->marca }}</td>
                                                     <td class="hidden-480">{{ $dispositivo->fecha_inicio }}</td>
                                                     <td class="hidden-480">{{ $dispositivo->fecha_entrega }}</td>
