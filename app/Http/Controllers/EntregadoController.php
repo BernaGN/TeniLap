@@ -27,7 +27,7 @@ class EntregadoController extends Controller
                 'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
                 'tipos.nombre as tipo','clientes.nombre as cliente',
                 'users.name as empleado')
-            ->where('tipos.nombre', 'Entregados')
+            ->where('dispositivos.estado', 'Entregado')
             ->get();
         return view('admin.dispositivos',[
             "nombre" =>'Entregados',
