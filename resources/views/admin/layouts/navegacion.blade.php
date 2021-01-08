@@ -42,28 +42,6 @@
     </li>
 
     <li class="">
-        <a href="{{ route('pagos.index') }}">
-            <i class="menu-icon fa fa-money"></i>
-            <span class="menu-text">
-                Pagos
-            </span>
-
-            <b class="arrow"></b>
-        </a>
-    </li>
-
-    <li class="">
-        <a href="{{ route('empleados.index') }}">
-            <i class="menu-icon fa fa-users"></i>
-            <span class="menu-text">
-                Empleados
-            </span>
-
-            <b class="arrow"></b>
-        </a>
-    </li>
-
-    <li class="">
         <a href="{{ route('reparados.index') }}">
             <i class="menu-icon fa fa-check"></i>
             <span class="menu-text">
@@ -79,6 +57,28 @@
             <i class="menu-icon fa fa-ticket"></i>
             <span class="menu-text">
                 Entregados
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
+    <li class="">
+        <a href="{{ route('pagos.index') }}">
+            <i class="menu-icon fa fa-money"></i>
+            <span class="menu-text">
+                Pagos
+            </span>
+
+            <b class="arrow"></b>
+        </a>
+    </li>
+
+    <li class="">
+        <a href="{{ route('empleados.index') }}">
+            <i class="menu-icon fa fa-users"></i>
+            <span class="menu-text">
+                Empleados
             </span>
 
             <b class="arrow"></b>
