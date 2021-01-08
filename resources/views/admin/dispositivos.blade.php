@@ -55,6 +55,7 @@
                                 <table id="simple-table" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
+                                            <th>id</th>
                                             <th>Dispositivo</th>
                                             <th>Fecha de Inicio</th>
                                             <th>Fecha de Entrega</th>
