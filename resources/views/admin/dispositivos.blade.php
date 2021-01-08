@@ -43,7 +43,7 @@
                         </h1>
                     </div><!-- /.page-header -->
                     <div class="col-xs-12">
-                        @if ($nombre != 'Pendientes')
+                        @if ($nombre == 'Dispositivos')
                             <button class="btn btn-primary btn-lg" type="button" data-toggle="modal"
                                 data-target="#abrirmodal">
                                 <i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Agregar Dispositivos
@@ -81,7 +81,7 @@
                                                     <td class="hidden-480">{{ $dispositivo->cliente }}</td>
                                                     <td class="hidden-480">{{ $dispositivo->empleado }}</td>
 
-                                                    @if ($nombre != 'Pendientes')
+                                                    @if ($nombre == 'Dispositivos')
                                                         <td>
                                                             <div class="hidden-sm hidden-xs btn-group">
                                                                 <form
