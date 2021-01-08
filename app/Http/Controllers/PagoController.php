@@ -19,7 +19,7 @@ class PagoController extends Controller
         $dispositivo = DB::table('dispositivos')
             ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
             ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
-            ->select('dispositivos.marca', 'dispositivos.total',
+            ->select('dispositivos.marca', 'dispositivos.anticipo',
                 'tipos.nombre as tipo','clientes.nombre as cliente')
             ->get();
         return view('admin.pagos',[
