@@ -13,7 +13,29 @@ class EntregadoController extends Controller
      */
     public function index()
     {
-        //
+        $dispositivo = DB::table('dispositivos')
+            ->join('clientes', 'dispositivos.cliente_id', '=', 'clientes.id')
+            ->join('tipos', 'dispositivos.tipo_id', '=', 'tipos.id')
+            ->join('users', 'dispositivos.user_id', '=', 'users.id')
+            ->select('dispositivos.id', 'dispositivos.fecha_inicio', 'dispositivos.fecha_entrega',
+                'dispositivos.estado', 'dispositivos.total', 'dispositivos.marca',
+                'tipos.nombre as tipo','clientes.nombre as cliente',
+                'users.name as empleado')
+            ->where('tipos.nombre', 'Entregados')
+            ->get();
+        return view('admin.dispositivos',[
+            "nombre" =>'Entregados',
+            'dispositivos' => $dispositivo,
+            'tipos' => DB::table('tipos')
+                ->orderBy('id', 'ASC')
+                ->get(),
+            'empleados' => DB::table('users')
+                ->orderBy('id', 'ASC')
+                ->get(),
+            'clientes' => DB::table('clientes')
+                ->orderBy('id', 'ASC')
+                ->get(),
+        ]);
     }
 
     /**
