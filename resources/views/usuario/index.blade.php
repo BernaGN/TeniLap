@@ -7,26 +7,17 @@
                 <div class="carousel-inner">
                     <div class="carousel-item">
                         <div class="jumbotron pulse animated hero-nature carousel-hero">
-                            <h1 class="hero-title">Hero Nature</h1>
-                            <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam.</p>
-                            <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                            <h1 class="hero-title">Reparacion de computadoras</h1>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="jumbotron pulse animated hero-photography carousel-hero">
-                            <h1 class="hero-title">Hero Photography</h1>
-                            <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam.</p>
-                            <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                            <h1 class="hero-title">Venta de componentes</h1>
                         </div>
                     </div>
                     <div class="carousel-item active">
                         <div class="jumbotron pulse animated hero-technology carousel-hero">
-                            <h1 class="hero-title">Hero Technology</h1>
-                            <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam.</p>
-                            <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                            <h1 class="hero-title">Limpieza de equipos</h1>
                         </div>
                     </div>
                 </div>
