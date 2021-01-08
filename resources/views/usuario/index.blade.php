@@ -60,13 +60,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p class="text-center">Aquí pon tu recomendación</p>
-                    </div>
-                    <div class="col">
-                        <p class="text-center">Aquí pon tu&nbsp;recomendación<br></p>
-                    </div>
-                    <div class="col">
-                        <p class="text-center">Aquí pon tu recomendación</p>
+                        <h3>MAXIMIZA LA VIDA ÚTIL DE TU TELÉFONO</h3>
+                        <p class="text-center">
+                            mantener la batería entre el 20 y el 80% de carga es beneficioso para su vida útil. Cuando la
+                            carga suba del 80% estarás forzando y degradando las celdas de iones de la batería, lo que se
+                            traduce en que su salud se resiente y la autonomía baja con el tiempo. Lo mismo pasa cuando la
+                            batería baja del 20%, que la estaremos forzando. Por lo tanto, al mantenerla en estos límites lo
+                            que vas a lograr es no someter a tanto estrés a las baterías y prolongar su vida útil.
+                        </p>
                     </div>
                 </div>
             </div>
