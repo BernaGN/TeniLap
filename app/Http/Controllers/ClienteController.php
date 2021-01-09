@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Localidad;
-use App\Models\Empleado;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Redirect;

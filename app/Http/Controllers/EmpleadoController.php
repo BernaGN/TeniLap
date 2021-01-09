@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Empleado;
+use App\Models\User;
 use DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -41,7 +41,7 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        $empleado = new Empleado();
+        $empleado = new User();
         $empleado->nombre = $request->nombre;
         $empleado->email = $request->email;
         $empleado->password = $request->password;
@@ -80,7 +80,7 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $empleado = Empleado::findOrFail($request->id_empleado);
+        $empleado = User::findOrFail($request->id_empleado);
         $empleado->nombre = $request->nombre;
         $empleado->email = $request->email;
         $empleado->password = $request->password;
@@ -96,7 +96,7 @@ class EmpleadoController extends Controller
      */
     public function destroy($id)
     {
-        $empleado = Empleado::findOrFail($id);
+        $empleado = User::findOrFail($id);
         $empleado->delete();
         return Redirect::to('empleados')
             ->with('success','Eliminado correctamente');
