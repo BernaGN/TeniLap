@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
 
 class EmpleadoController extends Controller
 {
