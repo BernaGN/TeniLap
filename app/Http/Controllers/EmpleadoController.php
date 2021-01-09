@@ -44,7 +44,7 @@ class EmpleadoController extends Controller
         $empleado = new User();
         $empleado->nombre = $request->nombre;
         $empleado->email = $request->email;
-        $empleado->password = $request->password;
+        $empleado->password = Hash::make($request->password);
         $empleado->save();
         return Redirect::to('empleados');
     }
@@ -83,7 +83,7 @@ class EmpleadoController extends Controller
         $empleado = User::findOrFail($request->id_empleado);
         $empleado->name = $request->nombre;
         $empleado->email = $request->email;
-        $empleado->password = $request->password;
+        $empleado->password = Hash::make($request->password);
         $empleado->save();
         return Redirect::to('empleados');
     }
