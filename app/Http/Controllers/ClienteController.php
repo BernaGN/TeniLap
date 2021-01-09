@@ -49,7 +49,7 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $cliente = new Cliente();
-        $cliente->nombre = $request->nombre;
+        $cliente->name = $request->nombre;
         $cliente->email = $request->email;
         $cliente->telefono = $request->telefono;
         $cliente->estado = $request->status;
@@ -90,7 +90,7 @@ class ClienteController extends Controller
     public function update(Request $request, $id)
     {
         $cliente = Cliente::findOrFail($request->id_cliente);
-        $cliente->nombre = $request->nombre;
+        $cliente->name = $request->nombre;
         $cliente->email = $request->email;
         $cliente->telefono = $request->telefono;
         $cliente->estado = $request->status;

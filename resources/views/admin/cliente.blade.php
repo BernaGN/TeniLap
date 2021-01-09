@@ -97,10 +97,10 @@
                                                             </button>
 
                                                             @method('DELETE')
-                                                            <button class="btn btn-xs btn-danger" type="submit"
-                                                                onclick="return confirm('Quieres eliminarlo?')">
-                                                                <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                            </button>
+                                                            <!--<button class="btn btn-xs btn-danger" type="submit"
+                                                                    onclick="return confirm('Quieres eliminarlo?')">
+                                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                                </button>-->
                                                             @csrf
                                                         </form>
                                                     </div>
