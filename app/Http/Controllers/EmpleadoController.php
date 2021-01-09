@@ -81,7 +81,7 @@ class EmpleadoController extends Controller
     public function update(Request $request, $id)
     {
         $empleado = User::findOrFail($request->id_empleado);
-        $empleado->nombre = $request->nombre;
+        $empleado->name = $request->nombre;
         $empleado->email = $request->email;
         $empleado->password = $request->password;
         $empleado->save();
