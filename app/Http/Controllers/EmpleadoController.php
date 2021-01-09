@@ -43,7 +43,7 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         $empleado = new User();
-        $empleado->nombre = $request->nombre;
+        $empleado->name = $request->nombre;
         $empleado->email = $request->email;
         $empleado->password = Hash::make($request->password);
         $empleado->save();
